@@ -5,11 +5,17 @@
 
 const listEmail = ["boolean@boolean.it", "alessandro@boolean.it", "richard@boolean.it", "tom@boolean.it", "alexis@boolean.it", "denzel@boolean.it", "cristiano@boolean.it"];
 
-let confermVerification = 0;
+let newBox = document.createElement("div");
 
 document.querySelector("button").addEventListener("click", function () {
 
+    
+
+    let confermVerification = 0;
+
     const userEmail = document.getElementById("input-email").value;
+
+    
 
     for(let i = 0; i < listEmail.length; i++){
         if(listEmail[i] == userEmail){
@@ -23,13 +29,23 @@ document.querySelector("button").addEventListener("click", function () {
     }
 
     if (confermVerification > 0) {
-        console.log("sei nella lista");
+        
+        newBox.classList.remove("border-success");
+        newBox.classList.add("border", "border-3", "border-danger", "mt-3", "p-3");
+        newBox.innerHTML = "sei nella black list";
+        document.getElementById("email-user").append(newBox);
+
         
     }else{
-        console.log("non sei nella lista");
+        
+        newBox.classList.remove("border-danger");
+        newBox.classList.add("border", "border-3", "border-success", "mt-3", "p-3");
+        newBox.innerHTML = "non sei nella black list";
+        document.getElementById("email-user").append(newBox);
     }
     
 });
+
 
 
 
@@ -47,12 +63,21 @@ document.getElementById("play-game").addEventListener("click", function () {
     console.log(pcNumber);
 
     if (userNumber > pcNumber) {
-        console.log("hai vinto");
+        newBox.classList.remove("border-danger");
+        newBox.classList.add("border", "border-3", "border-success", "mt-3", "p-3");
+        newBox.innerHTML = `Hai Vinto!! Il tuo punteggio: ${userNumber} è più alto del punteggio del computer: ${pcNumber}`;
+        document.getElementById("dice-game").append(newBox);
         
     } else if(userNumber < pcNumber){
-        console.log("hai perso");
+        newBox.classList.remove("border-success");
+        newBox.classList.add("border", "border-3", "border-danger", "mt-3", "p-3");
+        newBox.innerHTML = `Hai perso!! Il tuo punteggio: ${userNumber} è più basso del punteggio del computer: ${pcNumber}`;
+        document.getElementById("dice-game").append(newBox);
     }else{
-        console.log("pareggio, ritenta");
+        newBox.classList.remove("border-danger", "border-success");
+        newBox.classList.add("border", "border-3", "mt-3", "p-3");
+        newBox.innerHTML = `Pareggio!! Il tuo punteggio: ${userNumber} è uguale al punteggio del computer: ${pcNumber}`;
+        document.getElementById("dice-game").append(newBox);
     }
     
 })

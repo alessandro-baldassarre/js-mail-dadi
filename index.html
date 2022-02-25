@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FizzBuzz</title>
+    <title>Mail e gioco dei dadi</title>
 
     <!-- fontaweson -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -24,19 +24,32 @@
 
 <body>
     <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <label for="input-email">inserisci email</label>
-                    <input type="text" id="input-email">
-                    <button class="btn btn-primary">Vai</button>
+        <div class="container p-5">
+            <div class="wrapper bg-lighy shadow rounded">
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h1 class="text-uppercase text-center">controlla se sei nella black-list della Boolizia</h1>
+                    </div>
+                    <div class="col-12 p-5" id="email-user">
+                        <label for="input-email" class="me-2">Inserisci Email</label>
+                        <input type="email" id="input-email" class="me-2">
+                        <button class="btn btn-primary">Vai</button>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="row">
-                <div class="col-12">
-                    
-                    <button id="play-game" class="btn btn-primary">Go</button>
+        <div class="container p-5">
+            <div class="wrapper bg-lighy shadow rounded">
+                <div class="row">
+                    <div class="col-12 p-5">
+                        <div class="col-12 mb-5">
+                            <h1 class="text-uppercase text-center">Sei un vero gambler? Gioca al gioco dei Dadi</h1>
+                        </div>
+                        <div class="col-12 text-center" id="dice-game">
+                            <button id="play-game" class="btn btn-primary">Go</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
